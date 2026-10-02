@@ -1,7 +1,7 @@
 {
   "name": "shapecheck",
-  "sourceCommit": "c1c07e5b97c69ee84fe527d5680092f2b2ca007b",
-  "builtAt": "2026-10-02T09:41:48.363Z",
+  "sourceCommit": "98f1b2272333d0ead79fd11a93e63026fb71fa8a",
+  "builtAt": "2026-10-02T09:54:47.940Z",
   "base": "./",
   "schemaDialect": "draft-07",
   "dependencies": {
@@ -12,9 +12,9 @@
     "react-dom": "19.3.0"
   },
   "files": {
+    "assets/index-BBtlmark.js": "32fa1f431b13c4c3498cbff1857f659db15552e8e07c7a89b09f750f1ad7972e",
     "assets/index-CS98_Led.css": "7fa681145b3076e97c57304e5613d8c3de4aaf3c5d8108beca0ccfe438aecd74",
-    "assets/index-Cvky7eb5.js": "f821bbd726dad5d3b50ba9c56739f1f6b7efad54f1bc9aef46c29ca1423b234c",
-    "assets/validation.worker-DG3wo7c1.js": "4871516761d594bc5e652d3c0cc5a8f33c6372012e78abca1ba48634d9a41bde",
-    "index.html": "01e702d43e22720ea0e745d931bd90bc6c43397bffb9f953565044395dadf120"
+    "assets/validation.worker-D1dpxHgW.js": "d631dc4bdaab725dde1fcad3401295ddcdf359edd4974a503aa41f5e2ad80d0e",
+    "index.html": "166840f7a0f3cc094da6bb4566d9105a0f286c54e92226ecb3e379856fa426fb"
   }
 }
