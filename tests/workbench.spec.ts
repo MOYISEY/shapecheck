@@ -102,3 +102,7 @@ test('cancel and rerun terminate a stalled worker',async ({page}) => {
   await page.getByRole('button',{name:'Check all',exact:true}).click();
   await expect(page.getByText('2/2',{exact:true})).toBeVisible();
 });
+test('cold worker downloads do not consume the validation deadline',async({page})=>{
+  await page.route('**/validation.worker-*.js',async route=>{await new Promise(r=>setTimeout(r,2500));await route.continue();});
+  await page.goto('./');await expect(page.getByText('2/2',{exact:true})).toBeVisible({timeout:10000});
+});

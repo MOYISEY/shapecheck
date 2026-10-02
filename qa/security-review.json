@@ -1,6 +1,6 @@
 {
   "reviewer": "independent code/security subagent",
-  "date": "2026-10-02T09:34:41.519Z",
+  "date": "2026-10-02T09:53:06.193Z",
   "runtime": "v24.15.0",
   "method": "Direct tests of current source modules through TypeScript transpileModule; dependency imports unchanged; product files not edited.",
   "scope": [
@@ -9,7 +9,8 @@
     "src/core/worker-client.ts",
     "src/core/export.ts",
     "src/App.tsx",
-    "index.html"
+    "index.html",
+    "src/validation.worker.ts"
   ],
   "sources": [
     "https://ajv.js.org/security.html",
@@ -18,10 +19,11 @@
   "sourceSha256": {
     "src/core/safety.ts": "2d09cc3e096e9b075c3a4c4e20235b250d696c7159ef027d6b1c760361e159ec",
     "src/core/validate.ts": "4d233a15202fa9c08d02472b2008204104cfc6504a2522d2fcb8489e063aee97",
-    "src/core/worker-client.ts": "2422312c64fddd35a21aaad05373499396985b41feebb7361a2a5a7ea2ac1262",
+    "src/core/worker-client.ts": "1b88e703026eda947494c35cb1f686f7d55a214eea0c1947aa6ebb94c605459f",
     "src/core/export.ts": "c6e9883d4190e7dc4af31305c6ca96007ff12289e609572d2347d7b4b245830e",
     "src/App.tsx": "5a54cdbab1eca4feb4764b41b2dad4a31cdff0bd0bb43c1847ba09fd3b0040a7",
-    "index.html": "83275938a14bb51e5c91ca618c6ec13a9c26cecf70402d7869bfa8960d1f7b22"
+    "index.html": "83275938a14bb51e5c91ca618c6ec13a9c26cecf70402d7869bfa8960d1f7b22",
+    "src/validation.worker.ts": "6bbe8ea36058ff06e2ae8026ca69b1db19dcfb228f7581ccc629a27c74326f9b"
   },
   "checks": [
     {
@@ -252,7 +254,8 @@
     "Editor intake byte bounds",
     "Duplicate/add enforce total project byte limit",
     "Schema formatting uses bounded setter",
-    "Corrupted saved data is preserved until explicit action"
+    "Corrupted saved data is preserved until explicit action",
+    "Worker startup deadline is separate from validation deadline; readiness sends project exactly once"
   ],
   "staticFindings": [
     {
@@ -268,6 +271,13 @@
       "area": "initial persisted workspace fallback",
       "status": "fixed; independently reviewed in current source",
       "detail": "Invalid stored workspace falls back with remember=false, then first effect removes the saved key without confirmation."
+    },
+    {
+      "severity": "medium",
+      "file": "src/core/worker-client.ts",
+      "area": "cold worker startup latency",
+      "status": "fixed; independently exercised",
+      "detail": "Network/module startup no longer consumes the 2-second validation allowance. Readiness is bounded by a separate 10-second startup timer."
     }
   ],
   "staticConfirmed": [
@@ -310,7 +320,9 @@
     "unresolvedFindings": 0,
     "executedChecksPassed": 54,
     "executedChecksFailed": 0,
-    "staticTransitionChecksPassed": 3
+    "staticTransitionChecksPassed": 3,
+    "focusedLifecycleChecksPassed": 16,
+    "focusedLifecycleChecksFailed": 0
   },
   "staticTransitionChecks": [
     {
@@ -325,5 +337,91 @@
       "name": "Startup persistence effect does not remove corrupt saved workspace",
       "result": "pass"
     }
-  ]
+  ],
+  "previousReviewSnapshot": {
+    "date": "2026-10-02T09:34:41.519Z",
+    "sourceSha256": {
+      "src/core/safety.ts": "2d09cc3e096e9b075c3a4c4e20235b250d696c7159ef027d6b1c760361e159ec",
+      "src/core/validate.ts": "4d233a15202fa9c08d02472b2008204104cfc6504a2522d2fcb8489e063aee97",
+      "src/core/worker-client.ts": "2422312c64fddd35a21aaad05373499396985b41feebb7361a2a5a7ea2ac1262",
+      "src/core/export.ts": "c6e9883d4190e7dc4af31305c6ca96007ff12289e609572d2347d7b4b245830e",
+      "src/App.tsx": "5a54cdbab1eca4feb4764b41b2dad4a31cdff0bd0bb43c1847ba09fd3b0040a7",
+      "index.html": "83275938a14bb51e5c91ca618c6ec13a9c26cecf70402d7869bfa8960d1f7b22"
+    },
+    "executedChecks": 54
+  },
+  "focusedLifecycleReview": {
+    "date": "2026-10-02T09:53:06.193Z",
+    "method": "Current source imported in memory; deterministic fake clock and injected workers; actual worker entry exercised with self shim.",
+    "checks": [
+      {
+        "name": "no project is sent before readiness",
+        "result": "pass"
+      },
+      {
+        "name": "slow startup gets its own full validation deadline",
+        "result": "pass"
+      },
+      {
+        "name": "validation timer begins at readiness",
+        "result": "pass"
+      },
+      {
+        "name": "startup is bounded to ten seconds",
+        "result": "pass"
+      },
+      {
+        "name": "late readiness after startup timeout is ignored",
+        "result": "pass"
+      },
+      {
+        "name": "batch messages before readiness are ignored",
+        "result": "pass"
+      },
+      {
+        "name": "duplicate readiness neither resends nor extends deadline",
+        "result": "pass"
+      },
+      {
+        "name": "cancelling startup ignores ready results and errors",
+        "result": "pass"
+      },
+      {
+        "name": "cancelling validation ignores late completion",
+        "result": "pass"
+      },
+      {
+        "name": "startup error is generic and cleans timer",
+        "result": "pass"
+      },
+      {
+        "name": "validation error is generic and cleans timer",
+        "result": "pass"
+      },
+      {
+        "name": "success is delivered once and clears deadline",
+        "result": "pass"
+      },
+      {
+        "name": "retry succeeds after startup failure",
+        "result": "pass"
+      },
+      {
+        "name": "validation timeout ignores late batch and ready",
+        "result": "pass"
+      },
+      {
+        "name": "readiness near startup deadline cancels startup timer",
+        "result": "pass"
+      },
+      {
+        "name": "actual worker entry installs handler before readiness and validates after request",
+        "result": "pass"
+      }
+    ],
+    "passed": 16,
+    "failed": 0,
+    "startupTimeoutMs": 10000,
+    "validationTimeoutMs": 2000
+  }
 }
