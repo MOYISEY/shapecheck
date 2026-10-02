@@ -1,0 +1,329 @@
+{
+  "reviewer": "independent code/security subagent",
+  "date": "2026-10-02T09:34:41.519Z",
+  "runtime": "v24.15.0",
+  "method": "Direct tests of current source modules through TypeScript transpileModule; dependency imports unchanged; product files not edited.",
+  "scope": [
+    "src/core/safety.ts",
+    "src/core/validate.ts",
+    "src/core/worker-client.ts",
+    "src/core/export.ts",
+    "src/App.tsx",
+    "index.html"
+  ],
+  "sources": [
+    "https://ajv.js.org/security.html",
+    "https://ajv.js.org/json-schema.html"
+  ],
+  "sourceSha256": {
+    "src/core/safety.ts": "2d09cc3e096e9b075c3a4c4e20235b250d696c7159ef027d6b1c760361e159ec",
+    "src/core/validate.ts": "4d233a15202fa9c08d02472b2008204104cfc6504a2522d2fcb8489e063aee97",
+    "src/core/worker-client.ts": "2422312c64fddd35a21aaad05373499396985b41feebb7361a2a5a7ea2ac1262",
+    "src/core/export.ts": "c6e9883d4190e7dc4af31305c6ca96007ff12289e609572d2347d7b4b245830e",
+    "src/App.tsx": "5a54cdbab1eca4feb4764b41b2dad4a31cdff0bd0bb43c1847ba09fd3b0040a7",
+    "index.html": "83275938a14bb51e5c91ca618c6ec13a9c26cecf70402d7869bfa8960d1f7b22"
+  },
+  "checks": [
+    {
+      "name": "remote HTTP reference",
+      "result": "pass"
+    },
+    {
+      "name": "file reference",
+      "result": "pass"
+    },
+    {
+      "name": "root reference",
+      "result": "pass"
+    },
+    {
+      "name": "root draft 2020",
+      "result": "pass"
+    },
+    {
+      "name": "nested draft 2020",
+      "result": "pass"
+    },
+    {
+      "name": "root unknown keyword",
+      "result": "pass"
+    },
+    {
+      "name": "unused definition unknown keyword",
+      "result": "pass"
+    },
+    {
+      "name": "OpenAPI nullable",
+      "result": "pass"
+    },
+    {
+      "name": "newer defs",
+      "result": "pass"
+    },
+    {
+      "name": "newer contentSchema",
+      "result": "pass"
+    },
+    {
+      "name": "regex pattern",
+      "result": "pass"
+    },
+    {
+      "name": "nested regex pattern",
+      "result": "pass"
+    },
+    {
+      "name": "regex patternProperties",
+      "result": "pass"
+    },
+    {
+      "name": "formats",
+      "result": "pass"
+    },
+    {
+      "name": "schema ID",
+      "result": "pass"
+    },
+    {
+      "name": "async schema",
+      "result": "pass"
+    },
+    {
+      "name": "data keyword",
+      "result": "pass"
+    },
+    {
+      "name": "recursive reference",
+      "result": "pass"
+    },
+    {
+      "name": "dangling reference",
+      "result": "pass"
+    },
+    {
+      "name": "malformed percent escape",
+      "result": "pass"
+    },
+    {
+      "name": "encoded nullable bypass",
+      "result": "pass"
+    },
+    {
+      "name": "encoded regex bypass",
+      "result": "pass"
+    },
+    {
+      "name": "encoded network bypass",
+      "result": "pass"
+    },
+    {
+      "name": "encoded recursive bypass",
+      "result": "pass"
+    },
+    {
+      "name": "acyclic local refs",
+      "result": "pass"
+    },
+    {
+      "name": "percent-decoded valid ref",
+      "result": "pass"
+    },
+    {
+      "name": "data keyword-shaped names remain inert",
+      "result": "pass"
+    },
+    {
+      "name": "pollution key __proto__",
+      "result": "pass"
+    },
+    {
+      "name": "pollution key constructor",
+      "result": "pass"
+    },
+    {
+      "name": "pollution key prototype",
+      "result": "pass"
+    },
+    {
+      "name": "prototype remains clean",
+      "result": "pass"
+    },
+    {
+      "name": "array expected rejected",
+      "result": "pass"
+    },
+    {
+      "name": "unknown metadata rejected",
+      "result": "pass"
+    },
+    {
+      "name": "duplicate IDs rejected",
+      "result": "pass"
+    },
+    {
+      "name": "fixture count rejected",
+      "result": "pass"
+    },
+    {
+      "name": "UTF8 size enforced",
+      "result": "pass"
+    },
+    {
+      "name": "data depth enforced",
+      "result": "pass"
+    },
+    {
+      "name": "data nodes enforced",
+      "result": "pass"
+    },
+    {
+      "name": "finite number enforced",
+      "result": "pass"
+    },
+    {
+      "name": "no payload value in contract errors",
+      "result": "pass"
+    },
+    {
+      "name": "no schema value in compile errors",
+      "result": "pass"
+    },
+    {
+      "name": "no payload value in syntax errors",
+      "result": "pass"
+    },
+    {
+      "name": "coercion disabled",
+      "result": "pass"
+    },
+    {
+      "name": "defaults disabled",
+      "result": "pass"
+    },
+    {
+      "name": "additional removal disabled",
+      "result": "pass"
+    },
+    {
+      "name": "issues bounded",
+      "result": "pass"
+    },
+    {
+      "name": "false schema yields invalid",
+      "result": "pass"
+    },
+    {
+      "name": "worker cancellation ignores late completion",
+      "result": "pass"
+    },
+    {
+      "name": "worker timeout terminates and ignores late completion",
+      "result": "pass"
+    },
+    {
+      "name": "worker rerun succeeds after cancellation",
+      "result": "pass"
+    },
+    {
+      "name": "Exported positive and negative suite actually executes",
+      "result": "pass"
+    },
+    {
+      "name": "Exported suite rejects real regression",
+      "result": "pass"
+    },
+    {
+      "name": "Expected-invalid syntax fails without leaking payload value",
+      "result": "pass"
+    },
+    {
+      "name": "Malformed project fails without raw parser disclosure",
+      "result": "pass"
+    }
+  ],
+  "passed": 54,
+  "failed": 0,
+  "confirmedFixed": [
+    "Strict string expectation import",
+    "Explicit draft-07 keyword allowlist in all schema-bearing nodes",
+    "Nested dialect rejection",
+    "URI fragment decoding matches AJV",
+    "Generic exported JSON parser/read errors",
+    "Editor intake byte bounds",
+    "Duplicate/add enforce total project byte limit",
+    "Schema formatting uses bounded setter",
+    "Corrupted saved data is preserved until explicit action"
+  ],
+  "staticFindings": [
+    {
+      "severity": "medium",
+      "file": "src/App.tsx",
+      "area": "add/duplicate and schema formatter",
+      "status": "fixed; independently reviewed in current source",
+      "detail": "These transitions bypass current byte-bound setters; worker refuses oversized projects but UI can create unsavable state."
+    },
+    {
+      "severity": "low",
+      "file": "src/App.tsx",
+      "area": "initial persisted workspace fallback",
+      "status": "fixed; independently reviewed in current source",
+      "detail": "Invalid stored workspace falls back with remember=false, then first effect removes the saved key without confirmation."
+    }
+  ],
+  "staticConfirmed": [
+    "React text rendering; no dangerouslySetInnerHTML",
+    "No fetch/XHR or external-ref loader in product code",
+    "AJV logger:false and error params allowlist",
+    "Only Shapecheck storage key is read/removed",
+    "Clear confirmation is explicit",
+    "Schema/payload values are not embedded into generated test source"
+  ],
+  "limitations": [
+    "This report is source/core review, not a deployment/browser penetration test.",
+    "Worker timeout is tested using injected fake workers; actual browser lifecycle is covered separately by E2E.",
+    "Worker isolation and input bounds do not constitute a hard memory sandbox.",
+    "Draft-07 contentEncoding/contentMediaType are accepted annotations, not decoders or content validators."
+  ],
+  "exportExecution": {
+    "directory": "C:\\Users\\aldia\\AppData\\Local\\Temp\\shapecheck-security-export-abCIrZ",
+    "files": [
+      "project.json",
+      "test.mjs",
+      "validator.mjs",
+      "README.md",
+      "LICENSES.txt"
+    ],
+    "runtime": "v24.15.0",
+    "positiveExit": 0,
+    "regressionExit": "nonzero",
+    "malformedProjectExit": "nonzero",
+    "rawValueDisclosure": false,
+    "malformedNegativeFixture": {
+      "positiveFixtureReset": true,
+      "pass": 2,
+      "fail": 1,
+      "rawValueDisclosure": false
+    }
+  },
+  "verdict": {
+    "criticalBlockers": 0,
+    "unresolvedFindings": 0,
+    "executedChecksPassed": 54,
+    "executedChecksFailed": 0,
+    "staticTransitionChecksPassed": 3
+  },
+  "staticTransitionChecks": [
+    {
+      "name": "Add/duplicate checks total project bytes before applying",
+      "result": "pass"
+    },
+    {
+      "name": "Schema formatter routes through bounded setter",
+      "result": "pass"
+    },
+    {
+      "name": "Startup persistence effect does not remove corrupt saved workspace",
+      "result": "pass"
+    }
+  ]
+}

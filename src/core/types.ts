@@ -1,0 +1,9 @@
+export type Language = 'en' | 'ru';
+export type Expected = 'valid' | 'invalid';
+export type Fixture = { id: string; name: string; payload: string; expected: Expected };
+export type Project = { version: 1; name: string; schema: string; fixtures: Fixture[] };
+export type Status = 'valid' | 'invalid' | 'syntax' | 'policy' | 'schema' | 'timeout' | 'cancelled';
+export type Issue = { code: string; path: string; schemaPath?: string; detail?: string; line?: number; column?: number; params?: Record<string, unknown> };
+export type Result = { id: string; status: Status; issues: Issue[] };
+export type Batch = { schemaIssue?: Issue; schemaStatus?: 'syntax' | 'policy' | 'schema'; results: Result[] };
+export const LIMITS = Object.freeze({ schemaBytes: 65536, payloadBytes: 262144, projectBytes: 1048576, fixtures: 20, depth: 32, schemaDepth: 16, nodes: 20000, schemaNodes: 2000, issues: 100, timeoutMs: 2000 });

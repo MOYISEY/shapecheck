@@ -1,0 +1,320 @@
+{
+  "date": "2026-10-02T09:36:25.539Z",
+  "url": "http://127.0.0.1:4185",
+  "views": [
+    {
+      "label": "desktop-en-light",
+      "geometry": {
+        "viewport": 1440,
+        "page": 1440,
+        "height": 1223
+      },
+      "violations": []
+    },
+    {
+      "label": "desktop-en-dark",
+      "geometry": {
+        "viewport": 1440,
+        "page": 1440,
+        "height": 1223
+      },
+      "violations": []
+    },
+    {
+      "label": "desktop-ru-light",
+      "geometry": {
+        "viewport": 1440,
+        "page": 1440,
+        "height": 1223
+      },
+      "violations": []
+    },
+    {
+      "label": "desktop-ru-dark",
+      "geometry": {
+        "viewport": 1440,
+        "page": 1440,
+        "height": 1223
+      },
+      "violations": []
+    },
+    {
+      "label": "mobile390-en-light",
+      "geometry": {
+        "viewport": 390,
+        "page": 390,
+        "height": 2053
+      },
+      "violations": []
+    },
+    {
+      "label": "mobile390-en-dark",
+      "geometry": {
+        "viewport": 390,
+        "page": 390,
+        "height": 2053
+      },
+      "violations": []
+    },
+    {
+      "label": "mobile390-ru-light",
+      "geometry": {
+        "viewport": 390,
+        "page": 390,
+        "height": 2090
+      },
+      "violations": []
+    },
+    {
+      "label": "mobile390-ru-dark",
+      "geometry": {
+        "viewport": 390,
+        "page": 390,
+        "height": 2090
+      },
+      "violations": []
+    },
+    {
+      "label": "mobile320-en-light",
+      "geometry": {
+        "viewport": 320,
+        "page": 320,
+        "height": 2126
+      },
+      "violations": []
+    },
+    {
+      "label": "mobile320-en-dark",
+      "geometry": {
+        "viewport": 320,
+        "page": 320,
+        "height": 2126
+      },
+      "violations": []
+    },
+    {
+      "label": "mobile320-ru-light",
+      "geometry": {
+        "viewport": 320,
+        "page": 320,
+        "height": 2176
+      },
+      "violations": []
+    },
+    {
+      "label": "mobile320-ru-dark",
+      "geometry": {
+        "viewport": 320,
+        "page": 320,
+        "height": 2176
+      },
+      "violations": []
+    },
+    {
+      "label": "desktop-help-dialog",
+      "geometry": {
+        "viewport": 1440,
+        "page": 1440,
+        "height": 1251
+      },
+      "violations": []
+    },
+    {
+      "label": "desktop-ru-help-dialog",
+      "geometry": {
+        "viewport": 1440,
+        "page": 1440,
+        "height": 1081
+      },
+      "violations": []
+    },
+    {
+      "label": "mobile320-en-help-dialog",
+      "geometry": {
+        "viewport": 320,
+        "page": 320,
+        "height": 2002
+      },
+      "violations": []
+    },
+    {
+      "label": "desktop-en-200percent-text",
+      "geometry": {
+        "viewport": 1440,
+        "page": 1440,
+        "height": 1609
+      },
+      "violations": []
+    }
+  ],
+  "interactions": [
+    {
+      "name": "skip-link",
+      "detail": {
+        "text": "JSON Schema",
+        "bounds": {
+          "x": 20,
+          "y": 10,
+          "width": 121.859375,
+          "height": 45,
+          "top": 10,
+          "right": 141.859375,
+          "bottom": 55,
+          "left": 20
+        }
+      }
+    },
+    {
+      "name": "skip-link-target",
+      "detail": {
+        "tag": "TEXTAREA",
+        "id": "schema-editor"
+      }
+    },
+    {
+      "name": "nested-error-jump",
+      "detail": {
+        "focus": true,
+        "start": 86,
+        "end": 96,
+        "selected": "\"quantity\"",
+        "scroll": 0
+      }
+    },
+    {
+      "name": "missing-field-jump",
+      "detail": {
+        "selected": "{\n  \"id\": \"1042\",\n  \"status\": \"paid\",\n  \"items\": [\n    {\n      \"sku\": \"BK-001\",\n      \"quantity\": 0\n    }\n  ]\n}",
+        "start": 0,
+        "end": 111,
+        "focus": true
+      }
+    },
+    {
+      "name": "syntax-error-jump",
+      "detail": {
+        "selected": "}",
+        "start": 8,
+        "end": 9,
+        "focus": true
+      }
+    },
+    {
+      "name": "help-dialog-initial-focus",
+      "detail": {
+        "text": "",
+        "label": "Close",
+        "tag": "BUTTON"
+      }
+    },
+    {
+      "name": "help-dialog-tab-0",
+      "detail": {
+        "tag": "BODY",
+        "inDialog": false,
+        "body": true
+      }
+    },
+    {
+      "name": "help-dialog-tab-1",
+      "detail": {
+        "tag": "BUTTON",
+        "inDialog": true,
+        "body": false
+      }
+    },
+    {
+      "name": "help-dialog-tab-2",
+      "detail": {
+        "tag": "BODY",
+        "inDialog": false,
+        "body": true
+      }
+    },
+    {
+      "name": "help-dialog-tab-3",
+      "detail": {
+        "tag": "BUTTON",
+        "inDialog": true,
+        "body": false
+      }
+    },
+    {
+      "name": "help-dialog-tab-4",
+      "detail": {
+        "tag": "BODY",
+        "inDialog": false,
+        "body": true
+      }
+    },
+    {
+      "name": "help-dialog-tab-5",
+      "detail": {
+        "tag": "BUTTON",
+        "inDialog": true,
+        "body": false
+      }
+    },
+    {
+      "name": "help-dialog-tab-6",
+      "detail": {
+        "tag": "BODY",
+        "inDialog": false,
+        "body": true
+      }
+    },
+    {
+      "name": "help-dialog-tab-7",
+      "detail": {
+        "tag": "BUTTON",
+        "inDialog": true,
+        "body": false
+      }
+    },
+    {
+      "name": "help-dialog-restores-focus",
+      "detail": true
+    },
+    {
+      "name": "clear-dialog-initial-focus",
+      "detail": {
+        "text": "",
+        "label": "Close",
+        "tag": "BUTTON"
+      }
+    },
+    {
+      "name": "clear-dialog-restores-focus",
+      "detail": true
+    },
+    {
+      "name": "ctrl-enter-rerun",
+      "detail": true
+    },
+    {
+      "name": "ru-generated-fixture-name",
+      "detail": "Новый пример 3 · копия"
+    },
+    {
+      "name": "escaped-key-/",
+      "detail": "\"\""
+    },
+    {
+      "name": "escaped-key-/a~1b~0c",
+      "detail": "\"a/b~c\""
+    },
+    {
+      "name": "root-error-jump",
+      "detail": "{}"
+    },
+    {
+      "name": "mobile-dialog-scroll",
+      "detail": {
+        "scrollHeight": 1447,
+        "clientHeight": 627
+      }
+    }
+  ],
+  "findings": [],
+  "pageErrors": []
+}
