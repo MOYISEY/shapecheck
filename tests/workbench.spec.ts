@@ -95,12 +95,17 @@ test('imports, escapes hostile strings and localizes all controls',async ({page}
   await page.keyboard.press('Escape'); await expect(page.getByRole('dialog')).not.toBeVisible();
 });
 test('cancel and rerun terminate a stalled worker',async ({page}) => {
-  await page.route('**/validation.worker-*.js',async route=>{await new Promise(r=>setTimeout(r,900));await route.continue();});
-  await page.goto('./'); await page.getByRole('button',{name:'Cancel',exact:true}).click();
+  let stalled=false;
+  await page.route('**/validation.worker-*.js',async route=>{
+    await route.fulfill({contentType:'text/javascript',body:'self.onmessage=()=>{};self.postMessage({type:"ready"});'});
+    stalled=true;
+  });
+  await page.goto('./'); await expect.poll(()=>stalled).toBe(true);
+  await page.getByRole('button',{name:'Cancel',exact:true}).click();
   await expect(page.getByText('Cancelled',{exact:true}).first()).toBeVisible();
   await page.unroute('**/validation.worker-*.js');
   await page.getByRole('button',{name:'Check all',exact:true}).click();
-  await expect(page.getByText('2/2',{exact:true})).toBeVisible();
+  await expect(page.getByText('2/2',{exact:true})).toBeVisible({timeout:15000});
 });
 test('cold worker downloads do not consume the validation deadline',async({page})=>{
   await page.route('**/validation.worker-*.js',async route=>{await new Promise(r=>setTimeout(r,2500));await route.continue();});

@@ -1,0 +1,79 @@
+{
+  "checkedAt": "2026-10-02T09:56:54.564Z",
+  "url": "https://moyisey.github.io/shapecheck/",
+  "sourceCommit": "98f1b2272333d0ead79fd11a93e63026fb71fa8a",
+  "release": {
+    "name": "shapecheck",
+    "sourceCommit": "98f1b2272333d0ead79fd11a93e63026fb71fa8a",
+    "builtAt": "2026-10-02T09:54:47.940Z",
+    "base": "./",
+    "schemaDialect": "draft-07",
+    "dependencies": {
+      "ajv": "8.20.0",
+      "fflate": "0.8.3",
+      "lucide-react": "0.577.0",
+      "react": "19.3.0",
+      "react-dom": "19.3.0"
+    },
+    "files": {
+      "assets/index-BBtlmark.js": "32fa1f431b13c4c3498cbff1857f659db15552e8e07c7a89b09f750f1ad7972e",
+      "assets/index-CS98_Led.css": "7fa681145b3076e97c57304e5613d8c3de4aaf3c5d8108beca0ccfe438aecd74",
+      "assets/validation.worker-D1dpxHgW.js": "d631dc4bdaab725dde1fcad3401295ddcdf359edd4974a503aa41f5e2ad80d0e",
+      "index.html": "166840f7a0f3cc094da6bb4566d9105a0f286c54e92226ecb3e379856fa426fb"
+    }
+  },
+  "hashes": [
+    {
+      "file": "assets/index-BBtlmark.js",
+      "sha256": "32fa1f431b13c4c3498cbff1857f659db15552e8e07c7a89b09f750f1ad7972e",
+      "status": 200
+    },
+    {
+      "file": "assets/index-CS98_Led.css",
+      "sha256": "7fa681145b3076e97c57304e5613d8c3de4aaf3c5d8108beca0ccfe438aecd74",
+      "status": 200
+    },
+    {
+      "file": "assets/validation.worker-D1dpxHgW.js",
+      "sha256": "d631dc4bdaab725dde1fcad3401295ddcdf359edd4974a503aa41f5e2ad80d0e",
+      "status": 200
+    },
+    {
+      "file": "index.html",
+      "sha256": "166840f7a0f3cc094da6bb4566d9105a0f286c54e92226ecb3e379856fa426fb",
+      "status": 200
+    }
+  ],
+  "requests": [
+    {
+      "url": "https://moyisey.github.io/shapecheck/",
+      "method": "GET",
+      "type": "document"
+    },
+    {
+      "url": "https://moyisey.github.io/shapecheck/assets/index-BBtlmark.js",
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "url": "https://moyisey.github.io/shapecheck/assets/index-CS98_Led.css",
+      "method": "GET",
+      "type": "stylesheet"
+    },
+    {
+      "url": "https://moyisey.github.io/shapecheck/assets/validation.worker-D1dpxHgW.js",
+      "method": "GET",
+      "type": "script"
+    }
+  ],
+  "pageErrors": [],
+  "externalRuntimeRequests": 0,
+  "checks": [
+    "Live synthetic positive/negative fixtures",
+    "Exact payload error pointer",
+    "RU dark mobile at 390 px without document overflow",
+    "Every deployed asset matches release SHA-256",
+    "All observed document/worker requests are same-origin GET",
+    "Eight live E2E scenarios passed separately, including actual ZIP Node execution and negative regression"
+  ]
+}

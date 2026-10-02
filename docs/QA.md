@@ -32,4 +32,4 @@ The first E2E attempt accidentally reached another project's server on port 4173
 
 ## Deployment
 
-Deployment verification will be recorded in `release.json` on GitHub Pages and a separate live evidence file. These local test results alone do not claim live verification. Chromium/Node 24 were executed; other browsers and the Node 22 minimum were not exhaustively tested.
+Published and verified: [live QA](LIVE-QA.md), [release manifest](https://moyisey.github.io/shapecheck/release.json), [machine-readable evidence](../qa/live-evidence.json). Eight live browser scenarios passed; deployed source is 98f1b2272333d0ead79fd11a93e63026fb71fa8a, Pages commit is 0fff91bb3196e307f41e544ddb012ccd07301b7e. Linux CI and Pages deployment both succeeded. Chromium/Node 24 were executed; other browsers and the Node 22 minimum were not exhaustively tested.
